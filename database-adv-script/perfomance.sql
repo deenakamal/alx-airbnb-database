@@ -9,7 +9,9 @@ SELECT b.id AS booking_id, b.start_date, b.end_date,
 FROM Booking b
 JOIN User u ON b.user_id = u.id
 JOIN Property p ON b.property_id = p.id
-JOIN Payment pay ON b.id = pay.booking_id;
+JOIN Payment pay ON b.id = pay.booking_id
+WHERE b.start_date >= '2025-01-01'
+  AND b.end_date <= '2025-12-31';
 
 -- Analyze performance of the initial query
 EXPLAIN ANALYZE
@@ -20,7 +22,9 @@ SELECT b.id AS booking_id, b.start_date, b.end_date,
 FROM Booking b
 JOIN User u ON b.user_id = u.id
 JOIN Property p ON b.property_id = p.id
-JOIN Payment pay ON b.id = pay.booking_id;
+JOIN Payment pay ON b.id = pay.booking_id
+WHERE b.start_date >= '2025-01-01'
+  AND b.end_date <= '2025-12-31';
 
 -- ================================
 -- Refactored Optimized Query
@@ -35,4 +39,7 @@ SELECT b.id AS booking_id, b.start_date, b.end_date,
 FROM Booking b
 JOIN User u ON b.user_id = u.id
 JOIN Property p ON b.property_id = p.id
-JOIN Payment pay ON b.id = pay.booking_id;
+JOIN Payment pay ON b.id = pay.booking_id
+WHERE b.start_date >= '2025-01-01'
+  AND b.end_date <= '2025-12-31';
+
