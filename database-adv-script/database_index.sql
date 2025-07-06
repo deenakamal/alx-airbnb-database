@@ -1,0 +1,13 @@
+EXPLAIN ANALYZE
+SELECT * FROM Booking WHERE user_id = 5;
+
+EXPLAIN ANALYZE
+SELECT * FROM Booking WHERE user_id = 5;
+
+
+EXPLAIN ANALYZE
+SELECT * FROM Booking WHERE user_id = 5;
+
+
+EXPLAIN ANALYZE
+SELECT * FROM Property WHERE location = 'Cairo';
