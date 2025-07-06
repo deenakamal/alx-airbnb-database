@@ -12,7 +12,8 @@ SELECT
 FROM Booking
 INNER JOIN User ON Booking.user_id = User.user_id;
 
--- Query 2: LEFT JOIN properties with reviews
+
+-- Query 2: LEFT JOIN properties with reviews and ordered by property name
 SELECT
     Property.property_id,
     Property.name,
@@ -21,7 +22,9 @@ SELECT
     Review.rating,
     Review.comment
 FROM Property
-LEFT JOIN Review ON Property.property_id = Review.property_id;
+LEFT JOIN Review ON Property.property_id = Review.property_id
+ORDER BY Property.name;
+
 
 -- Query 3: FULL OUTER JOIN users with bookings
 SELECT
